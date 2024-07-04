@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Replace 'items.csv' with the actual path to your CSV file
     loadCSV('data/items.csv', (data) => {
         const inventory = parseCSV(data);
-        // Display the name of the first item to check if the data is loaded correctly
-        document.getElementById("output").innerText = inventory[0].name;
-        console.log(inventory);
+        displayItems(inventory);
+        populateCategoryFilter(inventory);
+        setupSearchAndFilter(inventory);
     });
 });
 
@@ -31,4 +30,79 @@ function parseCSV(data) {
         }
     }
     return items;
+}
+
+function displayItems(items) {
+    const itemsContainer = document.getElementById('inventoryDisplay');
+    itemsContainer.innerHTML = '';
+    items.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item';
+        itemDiv.innerHTML = `
+            <h3>${item.name}</h3>
+            
+            <p>Price: $${item.price}</p>
+            <p>Color: ${item.color}</p>
+            <p>Size: ${item.size}</p>
+            <button class="add-to-cart" data-name="${item.name}">Add to Cart</button>
+        `;
+        itemsContainer.appendChild(itemDiv);
+    });
+    addCartFunctionality(items);
+}
+
+function populateCategoryFilter(items) {
+    const categorySelect = document.getElementById('categoryFilter');
+    const categories = [...new Set(items.map(item => item.category))];
+    categories.forEach(category => {
+        const option = document.createElement('option');
+        option.value = category;
+        option.textContent = category;
+        categorySelect.appendChild(option);
+    });
+}
+
+function addCartFunctionality(items) {
+    const cartItems = [];
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemName = this.getAttribute('data-name');
+            const item = items.find(i => i.name === itemName);
+            cartItems.push(item);
+            displayCart(cartItems);
+        });
+    });
+}
+
+function displayCart(cartItems) {
+    const cartItemsContainer = document.getElementById('cartContents');
+    cartItemsContainer.innerHTML = '';
+    cartItems.forEach(item => {
+        const cartItem = document.createElement('li');
+        cartItem.className = 'cart-item';
+        cartItem.textContent = `${item.name} - $${item.price}`;
+        cartItemsContainer.appendChild(cartItem);
+    });
+}
+
+function setupSearchAndFilter(items) {
+    const searchInput = document.getElementById('searchBar');
+    const searchButton = document.getElementById('searchButton');
+    const categorySelect = document.getElementById('categoryFilter');
+
+    function filterItems() {
+        const searchText = searchInput.value.toLowerCase();
+        const selectedCategory = categorySelect.value;
+        const filteredItems = items.filter(item => {
+            return (
+                (item.name.toLowerCase().includes(searchText) || item.category.toLowerCase().includes(searchText)) &&
+                (selectedCategory === '' || item.category === selectedCategory)
+            );
+        });
+        displayItems(filteredItems);
+    }
+
+    searchButton.addEventListener('click', filterItems);
+    categorySelect.addEventListener('change', filterItems);
 }
