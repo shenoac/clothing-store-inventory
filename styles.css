@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.controls {
+    margin: 1em 0;
+}
+
+#searchBar, #categoryFilter {
+    padding: 0.5em;
+    margin: 0 0.5em;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+#inventoryDisplay {
+    width: 60%;
+}
+
+.inventory-item {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+#shoppingCart {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 1em;
+}
+
+#cartContents {
+    list-style-type: none;
+    padding: 0;
+}
