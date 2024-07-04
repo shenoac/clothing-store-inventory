@@ -1,0 +1,51 @@
+id,name,category,price,color,size
+1,Men's T-Shirt,Tops,19.99,Black,M
+2,Women's Jeans,Bottoms,29.99,Blue,S
+3,Men's Hoodie,Outerwear,39.99,Gray,L
+4,Women's Dress,Dresses,49.99,Red,M
+5,Men's Shorts,Bottoms,24.99,Khaki,L
+6,Women's Blouse,Tops,22.99,White,M
+7,Women's T-Shirt,Tops,18.99,Gray,S
+8,Men's Jeans,Bottoms,34.99,Black,L
+9,Women's Jacket,Outerwear,59.99,Black,M
+10,Men's Sweater,Tops,44.99,Blue,XL
+11,Women's Skirt,Bottoms,26.99,Black,S
+12,Men's Polo Shirt,Tops,29.99,Red,M
+13,Women's Cardigan,Tops,39.99,Beige,L
+14,Men's Jacket,Outerwear,54.99,Navy,XL
+15,Women's Leggings,Bottoms,21.99,Black,S
+16,Men's Dress Shirt,Tops,49.99,White,M
+17,Women's Sweater,Tops,37.99,Gray,M
+18,Men's Chinos,Bottoms,31.99,Beige,32
+19,Women's Blazer,Outerwear,69.99,Black,L
+20,Men's Sweatpants,Bottoms,27.99,Gray,XL
+21,Women's Romper,Dresses,34.99,Blue,M
+22,Men's Suit,Outerwear,99.99,Charcoal,42
+23,Women's Jumpsuit,Dresses,39.99,Black,M
+24,Men's Tank Top,Tops,14.99,White,M
+25,Women's Polo Shirt,Tops,26.99,Navy,S
+26,Men's Cargo Shorts,Bottoms,29.99,Olive,34
+27,Women's Tank Top,Tops,12.99,Black,S
+28,Men's Blazer,Outerwear,79.99,Gray,42
+29,Women's Sweatpants,Bottoms,24.99,Gray,M
+30,Men's Cardigan,Tops,34.99,Charcoal,L
+31,Women's Hoodie,Outerwear,44.99,Purple,S
+32,Men's Flannel Shirt,Tops,37.99,Plaid,L
+33,Women's Parka,Outerwear,89.99,Olive,L
+34,Men's Swim Trunks,Bottoms,19.99,Blue,L
+35,Women's Trench Coat,Outerwear,79.99,Beige,M
+36,Men's Beanie,Accessories,12.99,Black,One Size
+37,Women's Sunglasses,Accessories,19.99,Black,One Size
+38,Men's Belt,Accessories,14.99,Brown,32
+39,Women's Scarf,Accessories,16.99,Red,One Size
+40,Men's Watch,Accessories,49.99,Silver,One Size
+41,Women's Handbag,Accessories,39.99,Black,One Size
+42,Men's Socks,Accessories,8.99,Gray,One Size
+43,Women's Gloves,Accessories,11.99,Black,One Size
+44,Men's Backpack,Accessories,54.99,Blue,One Size
+45,Women's Earrings,Accessories,9.99,Gold,One Size
+46,Men's Wallet,Accessories,24.99,Black,One Size
+47,Women's Necklace,Accessories,14.99,Silver,One Size
+48,Men's Cologne,Fragrance,39.99,NA,NA
+49,Women's Perfume,Fragrance,49.99,NA,NA
+50,Unisex Cologne,Fragrance,34.99,NA,NA
