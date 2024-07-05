@@ -77,6 +77,9 @@ function setupSearchAndFilter(items) {
             );
         });
         displayItems(filteredItems);
+        if (filteredItems.length === 0) {
+            alert('No items found.');
+        }
     }
 
     searchButton.addEventListener('click', filterItems);
@@ -109,4 +112,4 @@ function displayCart(cartItems) {
         totalPrice += parseFloat(item.price);
     });
     document.getElementById('output').innerText = `Total: $${totalPrice.toFixed(2)}`;
-}
+}                         
