@@ -106,3 +106,21 @@ function setupSearchAndFilter(items) {
     searchButton.addEventListener('click', filterItems);
     categorySelect.addEventListener('change', filterItems);
 }
+
+function displayItems(items) {
+    const itemsContainer = document.getElementById('inventoryDisplay');
+    itemsContainer.innerHTML = '';
+    items.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'inventory-item';
+        itemDiv.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>Price: $${item.price}</p>
+            <p>Color: ${item.color}</p>
+            <p>Size: ${item.size}</p>
+            <button class="add-to-cart" data-name="${item.name}">Add to Cart</button>
+        `;
+        itemsContainer.appendChild(itemDiv);
+    });
+    addCartFunctionality(items);
+}
