@@ -37,10 +37,9 @@ function displayItems(items) {
     itemsContainer.innerHTML = '';
     items.forEach(item => {
         const itemDiv = document.createElement('div');
-        itemDiv.className = 'item';
+        itemDiv.className = 'inventory-item';
         itemDiv.innerHTML = `
             <h3>${item.name}</h3>
-            
             <p>Price: $${item.price}</p>
             <p>Color: ${item.color}</p>
             <p>Size: ${item.size}</p>
@@ -50,6 +49,7 @@ function displayItems(items) {
     });
     addCartFunctionality(items);
 }
+
 
 function populateCategoryFilter(items) {
     const categorySelect = document.getElementById('categoryFilter');
@@ -61,20 +61,6 @@ function populateCategoryFilter(items) {
         categorySelect.appendChild(option);
     });
 }
-
-function addCartFunctionality(items) {
-    const cartItems = [];
-    const addToCartButtons = document.querySelectorAll('.add-to-cart');
-    addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const itemName = this.getAttribute('data-name');
-            const item = items.find(i => i.name === itemName);
-            cartItems.push(item);
-            displayCart(cartItems);
-        });
-    });
-}
-
 
 function setupSearchAndFilter(items) {
     const searchInput = document.getElementById('searchBar');
@@ -97,23 +83,19 @@ function setupSearchAndFilter(items) {
     categorySelect.addEventListener('change', filterItems);
 }
 
-function displayItems(items) {
-    const itemsContainer = document.getElementById('inventoryDisplay');
-    itemsContainer.innerHTML = '';
-    items.forEach(item => {
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'inventory-item';
-        itemDiv.innerHTML = `
-            <h3>${item.name}</h3>
-            <p>Price: $${item.price}</p>
-            <p>Color: ${item.color}</p>
-            <p>Size: ${item.size}</p>
-            <button class="add-to-cart" data-name="${item.name}">Add to Cart</button>
-        `;
-        itemsContainer.appendChild(itemDiv);
+function addCartFunctionality(items) {
+    const cartItems = [];
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const itemName = this.getAttribute('data-name');
+            const item = items.find(i => i.name === itemName);
+            cartItems.push(item);
+            displayCart(cartItems);
+        });
     });
-    addCartFunctionality(items);
 }
+
 
 function displayCart(cartItems) {
     const cartItemsContainer = document.getElementById('cartContents');
