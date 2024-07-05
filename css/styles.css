@@ -32,12 +32,40 @@ main {
 
 #inventoryDisplay {
     width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
 }
 
 .inventory-item {
     border: 1px solid #ccc;
+    border-radius: 8px;
     padding: 1em;
     margin: 1em 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.inventory-item h3 {
+    margin: 0 0 0.5em 0;
+}
+
+.inventory-item p {
+    margin: 0.5em 0;
+}
+
+.inventory-item button {
+    background-color: powderblue;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.inventory-item button:hover {
+    background-color: #0056b3;
 }
 
 #shoppingCart {
@@ -49,4 +77,9 @@ main {
 #cartContents {
     list-style-type: none;
     padding: 0;
+}
+
+.cart-item {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ccc;
 }
